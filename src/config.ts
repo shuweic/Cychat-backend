@@ -44,6 +44,7 @@ class Config {
   }
 
   public cloudinaryConfig(): void {
+    console.log(this.CLOUD_NAME?.length);
     cloudinary.v2.config({
       cloud_name: this.CLOUD_NAME,
       api_key: this.CLOUD_API_KEY,

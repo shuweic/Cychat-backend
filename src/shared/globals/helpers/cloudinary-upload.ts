@@ -1,6 +1,6 @@
 import cloudinary, { UploadApiResponse, UploadApiErrorResponse } from 'cloudinary';
 
-export function uploads(
+export async function uploads(
   file: string,
   public_id?: string,
   overwrite?: boolean,
@@ -10,9 +10,9 @@ export function uploads(
     cloudinary.v2.uploader.upload(
       file,
       {
-        public_id,
-        overwrite,
-        invalidate
+        public_id: 'test',
+        overwrite: true,
+        invalidate: true
       },
       (error: UploadApiErrorResponse | undefined, result: UploadApiResponse | undefined) => {
         if(error) resolve(error);
